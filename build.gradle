@@ -1,0 +1,19 @@
+group 'ai.qiwu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // http://mvnrepository.com/artifact/org.json/json
+    compile group: 'org.json', name: 'json', version: '20160212'
+
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+}
