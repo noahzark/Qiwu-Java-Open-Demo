@@ -39,7 +39,14 @@ public class Demo {
                 .build();
 
         Response response = client.newCall(request).execute();
-        JSONObject json = new JSONObject(response.body().string());
+        String res = response.body().string();
+        System.out.println(res);
+
+        JSONObject json = new JSONObject(res);
+        if (json.has("data"))
+            System.out.println("Appended data: " + json.getJSONObject("data"));
+        else
+            System.out.println("There is no extra data");
         return json.getString("msg");
     }
 
